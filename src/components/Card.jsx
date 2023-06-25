@@ -5,9 +5,12 @@ const Card = ({ title, price, features }) => {
     <div className="col-md-4">
       <div className="card mb-4">
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <h6 className="card-price">{price}</h6>
-          <ul className="list-unstyled mt-3 mb-4">
+          <h5 className="card-title text-center">{title}</h5>
+          <h6 className="card-price text-center">
+            {price}
+            <span class="period">/month</span>
+          </h6>
+          <ul className="list-style mt-3 mb-4">
             {features.map((feature, index) => (
               <li
                 key={index}
@@ -17,8 +20,8 @@ const Card = ({ title, price, features }) => {
               </li>
             ))}
           </ul>
-          <a href="#" className="btn btn-primary">
-            Get started
+          <a href="#" className="btn btn-primary text-uppercase">
+            BUTTON
           </a>
         </div>
       </div>
