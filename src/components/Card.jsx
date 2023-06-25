@@ -2,36 +2,24 @@ import React from "react";
 
 const Card = ({ title, price, features }) => {
   return (
-    <div className="col-lg-4">
-      <div className="card">
+    <div className="col-md-4">
+      <div className="card mb-4">
         <div className="card-body">
-          <h5 className="card-title text-muted text-uppercase text-center">
-            {title}
-          </h5>
-          <h6 className="card-price text-center">
-            {price}
-            <span className="period">/month</span>
-          </h6>
-          <hr />
-          <ul className="fa-ul">
+          <h5 className="card-title">{title}</h5>
+          <h6 className="card-price">{price}</h6>
+          <ul className="list-unstyled mt-3 mb-4">
             {features.map((feature, index) => (
-              <li key={index}>
-                <span className="fa-li">
-                  {feature.available ? (
-                    <i className="fas fa-check"></i>
-                  ) : (
-                    <i className="fas fa-times"></i>
-                  )}
-                </span>
+              <li
+                key={index}
+                className={feature.available ? "" : "text-muted"} // Apply "text-muted" class if feature is not available
+              >
                 {feature.text}
               </li>
             ))}
           </ul>
-          <div className="d-grid">
-            <a href="#" className="btn btn-primary text-uppercase">
-              Button
-            </a>
-          </div>
+          <a href="#" className="btn btn-primary">
+            Get started
+          </a>
         </div>
       </div>
     </div>
